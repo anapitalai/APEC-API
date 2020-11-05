@@ -33,7 +33,7 @@ const upload = multer({
 
 //mongodbUri = "mongodb://202.1.39.189:27017/eboard";
 
-mongodbUri = "mongodb://apec:apec@nictc-sp1.chervicontraining.com/APEC
+mongodbUri = "mongodb://apec:apec@nictc-sgp1.chervicontraining.com/APEC"
 
 
 
