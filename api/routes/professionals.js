@@ -19,7 +19,7 @@ const storage=multer.diskStorage({
     }
 });
 const fileFilter=(req,file,cb)=>{
-    if(file.mimetype==='image/jpeg' || file.mimetype==='image/png'){
+    if(file.mimetype==='image/jpeg' || file.mimetype==='image/png' || file.mimetype==='application/pdf'){
         cb(null,true);
     }
     else{
