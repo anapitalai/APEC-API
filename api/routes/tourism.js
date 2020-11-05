@@ -37,7 +37,7 @@ fileFilter:fileFilter
 
 router.get('/',(req,res,next)=>{
     Notices.find()
-    .select('_id site description contacts tourId location productImage createdAt updatedAt')
+    .select('_id site description contacts tourId  productImage createdAt updatedAt')
     .exec()
     .then(doc=>{
     
@@ -126,7 +126,7 @@ router.post('/',upload.array('productImage',4),(req,res,next)=>{
 router.get('/:noticeId',(req,res,next)=>{
     const id=req.params.noticeId;
     Notices.findById(id)
-    .select('_id site description  contacts tourId address location productImage createdAt')
+    .select('_id site description  contacts tourId address  productImage createdAt')
     .exec()
     .then(doc=>{
        console.log('From DB',doc);

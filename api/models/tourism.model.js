@@ -19,17 +19,17 @@ const SiteSchema = mongoose.Schema({
   contacts: { type: String, required: true },
   productImage: { type: Array, required: false },
 
-  location: {//located added
-    type: {
-      type: String,
-      enum: ["Point"],
-    },
-    coordinates: {
-      type: [Number],
-      index: "2dsphere",
-    },
-    formattedAddress: String,
-  },
+  // location: {//located added
+  //   type: {
+  //     type: String,
+  //     enum: ["Point"],
+  //   },
+  //   coordinates: {
+  //     type: [Number],
+  //     index: "2dsphere",
+  //   },
+  //   formattedAddress: String,
+  // },
   createdAt: Date,
   updatedAt: Date,
 });
@@ -45,17 +45,17 @@ SiteSchema.pre("save", function (next) {
 });
 
 //Geocode & create location
-SiteSchema.pre('save', async function(next) {
-    const loc = await geocoder.geocode(this.address);
-    this.location = {
-      type: 'Point',
-      coordinates: [loc[0].longitude, loc[0].latitude],
-      formattedAddress: loc[0].formattedAddress
-    };
+// SiteSchema.pre('save', async function(next) {
+//     const loc = await geocoder.geocode(this.address);
+//     this.location = {
+//       type: 'Point',
+//       coordinates: [loc[0].longitude, loc[0].latitude],
+//       formattedAddress: loc[0].formattedAddress
+//     };
   
-    // Do not save address
-    this.address = undefined;
-    next();
-  })
+//     // Do not save address
+//     this.address = undefined;
+//     next();
+//   })
 
 module.exports = mongoose.model("Site", SiteSchema);
