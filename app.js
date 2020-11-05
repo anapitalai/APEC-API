@@ -18,7 +18,8 @@ const siteRoutes = require('./api/routes/tourism');
 
 mongoose.connect(
 
-  "mongodb://202.1.39.189/eboard"
+  //"mongodb://202.1.39.189/eboard"
+  mongodbUri = "mongodb://apec:apec@nictc-sp1.chervicontraining.com/APEC
   );
 
 
