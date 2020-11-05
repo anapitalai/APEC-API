@@ -63,7 +63,8 @@ router.get('/',(req,res,next)=>{
                    listTourImages:docs.productImage[0],
                request:{
                  type:'GET',
-                 url:'http://202.1.39.151:3000/tourism/' + docs._id
+                 //url:'http://202.1.39.151:3000/tourism/' + docs._id
+                 url:'http://nictc-sgp1.chervicontraining.com:3000/tourism/' + docs._id
                },
                
                requestAvatar:{
@@ -91,7 +92,8 @@ router.post('/',upload.array('productImage',4),(req,res,next)=>{
     
     var arr = [];
     for (var i = 0; i < req.files.length; ++i) {
-      arr.push('http://202.1.39.151:3000/'+req.files[i].path );
+      //arr.push('http://202.1.39.151:3000/'+req.files[i].path );
+      arr.push('http://nictc-sgp1.chervicontraining.com:3000/'+req.files[i].path );
     };
 
         const notice = new Notices({
